@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/action_logout"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_logout">
+    </item>
+    <item
+        android:id="@+id/action_edit_buddies"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_edit_buddies">
+    </item>
+
+</menu>

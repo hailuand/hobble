@@ -1,0 +1,144 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f24b41"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    tools:context=".SignUpActivity" >
+
+    <TextView
+        android:id="@+id/signUpSplash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/sign_up_splash"
+        android:textSize="40sp"
+        android:textColor="@android:color/white" />
+    
+    <ImageView
+        android:id="@+id/signupIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signUpSplash"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/sign_up_icon" />
+    
+    <TextView
+        android:id="@+id/signupUsernameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/signupIcon"
+        android:layout_marginTop="20dp"
+        android:textSize="25sp"
+        android:textColor="@android:color/white"
+        android:text="@string/username_textview" />
+
+    <EditText
+        android:id="@+id/signupUsernameField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/signupUsernameTextView"
+        android:layout_below="@id/signupUsernameTextView"
+        android:background="@android:drawable/edit_text"
+        android:ems="10"
+        android:singleLine="true" >
+
+        <requestFocus />
+    </EditText>
+
+    
+
+    <TextView
+        android:id="@+id/signupPasswordTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:layout_marginTop="10dp"
+        android:layout_alignLeft="@id/signupUsernameField"
+        android:layout_below="@id/signupUsernameField"
+        android:textColor="@android:color/white"
+        android:text="@string/password_textview" />
+
+    <EditText
+        android:id="@+id/signupPasswordField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/signupPasswordTextView"
+        android:layout_below="@id/signupPasswordTextView"
+        android:background="@android:drawable/edit_text"
+        android:ems="10"
+        android:inputType="textPassword" >
+
+    </EditText>
+
+   <TextView
+        android:id="@+id/signupEmailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/signupPasswordField"
+        android:layout_below="@id/signupPasswordField"
+        android:textColor="@android:color/white"
+        android:textSize="25sp"
+        android:layout_marginTop="10dp"
+        android:text="@string/email" />
+   
+    <EditText
+        android:id="@+id/signupEmailField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/signupEmailTextView"
+        android:layout_below="@+id/signupEmailTextView"
+        android:background="@android:drawable/edit_text"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/homepointsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signupEmailField"
+        android:layout_alignLeft="@+id/signupEmailField"
+        android:layout_marginTop="10dp"
+        android:text="@string/select_homepoint"
+        android:textColor="@android:color/white"
+        android:textSize="25sp" />
+
+    <Spinner
+        android:id="@+id/homepoints"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_below="@id/homepointsTextView"
+        android:layout_alignLeft="@id/homepointsTextView"
+        android:layout_marginBottom="32dp"
+        android:background="@android:color/white" />
+
+    <Button
+        android:id="@+id/signupButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/homepoints"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:background="@android:color/white"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="20dp"
+        android:text="Sign Up" />
+
+    <Button
+        android:id="@+id/signupButtonFacebook"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/signupButton"
+        android:layout_alignLeft="@id/signupButton"
+        android:layout_marginBottom="10dp"
+        android:background="#3B5998"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="20dp"
+        android:text="@string/fb_signin" 
+        android:textColor="@android:color/white"/>
+
+</RelativeLayout>
