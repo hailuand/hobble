@@ -30,5 +30,6 @@
     <string name="title_activity_buddies_fragment">Edit Buddies</string>
     <string name="empty_buddies">No hobble buddies :(</string>
     <string name="action_edit_buddies">Edit Buddies</string>
+    <string name="add_buddy">Add Buddy</string>
 
 </resources>

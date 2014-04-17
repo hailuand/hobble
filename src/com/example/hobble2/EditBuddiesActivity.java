@@ -2,8 +2,9 @@ package com.example.hobble2;
 
 import java.util.List;
 
+import android.app.AlertDialog;
 import android.app.ListActivity;
-import android.graphics.Typeface;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.util.Log;
@@ -12,7 +13,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -28,6 +32,7 @@ public class EditBuddiesActivity extends ListActivity {
 	protected List<ParseUser> mUsers;
 	protected ParseRelation<ParseUser> mFriendsRelation;
 	protected ParseUser mCurrentUser;
+	protected Button mAddBuddyButton;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +42,56 @@ public class EditBuddiesActivity extends ListActivity {
 		
 		setupActionBar();
 		getListView().setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+		
+		mAddBuddyButton = (Button) findViewById(R.id.add_buddy_button);
+		mAddBuddyButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				AlertDialog.Builder alert = new AlertDialog.Builder(EditBuddiesActivity.this);
+				alert.setTitle("Enter Hobbler's username");
+				alert.setMessage("Message");
+				
+				final EditText input = new EditText(EditBuddiesActivity.this);
+				alert.setView(input);
+				
+				alert.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+					
+					@Override
+					public void onClick(DialogInterface dialog, int whichButton) {
+						// OK button has been clicked, query database to see if userId matches
+						// If it does, add them to your friends relation, if not, handle error
+						final String value = input.getText().toString();
+						
+						ParseQuery<ParseUser> query = ParseQuery.getQuery(ParseConstants.KEY_USERNAME);
+						query.whereEqualTo(ParseConstants.KEY_USERNAME, value);
+						query.findInBackground(new FindCallback<ParseUser>() {
+							public void done(List<ParseUser> users, ParseException e) {
+								if(e == null){
+								// Hobbler exists in the database, add him/her to friend list
+									ParseUser newFriend = new ParseUser().getParseUser(value);
+									mFriendsRelation.add(newFriend);
+									Toast toast = Toast.makeText(EditBuddiesActivity.this, "Hobbler succesfully added!", Toast.LENGTH_LONG);
+									toast.show();
+								}
+								else{
+								// Hobbler doesn't exists, handle error
+									AlertDialog.Builder builder = new AlertDialog.Builder(
+											EditBuddiesActivity.this);
+									builder.setMessage(e.getMessage())
+											.setTitle(R.string.error_title)
+											.setPositiveButton(android.R.string.ok,
+													null);
+									AlertDialog dialog = builder.create();
+									dialog.show();
+								}
+							}
+						});
+					}
+				});
+				
+			}
+		});
 		
 		
 
@@ -144,7 +199,7 @@ public class EditBuddiesActivity extends ListActivity {
 			@Override
 			public void done(ParseException e) {
 				if(e != null){
-					//Sumting wong
+					//Something went wrong
 					Log.e(TAG, e.getMessage());
 				}
 				

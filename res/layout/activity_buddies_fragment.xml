@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:paddingLeft="10dp"
     android:paddingRight="10dp"
-    android:background="#f24b41"
     tools:context=".BuddiesFragment" >
 
     <ListView
@@ -17,7 +16,7 @@
     <TextView
         android:id="@android:id/empty"
         android:layout_marginTop="10dp"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/empty_buddies"

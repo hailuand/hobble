@@ -29,29 +29,30 @@ public final class R {
         public static final int user_icon=0x7f020005;
     }
     public static final class id {
-        public static final int action_edit_buddies=0x7f080016;
-        public static final int action_logout=0x7f080015;
-        public static final int action_settings=0x7f080014;
-        public static final int homepoints=0x7f080011;
-        public static final int homepointsTextView=0x7f080010;
-        public static final int login_splash_text=0x7f080003;
-        public static final int pager=0x7f080007;
-        public static final int passwordField=0x7f080002;
-        public static final int passwordIcon=0x7f080004;
-        public static final int signIn=0x7f080005;
-        public static final int signUp=0x7f080006;
-        public static final int signUpSplash=0x7f080008;
-        public static final int signupButton=0x7f080012;
-        public static final int signupButtonFacebook=0x7f080013;
-        public static final int signupEmailField=0x7f08000f;
-        public static final int signupEmailTextView=0x7f08000e;
-        public static final int signupIcon=0x7f080009;
-        public static final int signupPasswordField=0x7f08000d;
-        public static final int signupPasswordTextView=0x7f08000c;
-        public static final int signupUsernameField=0x7f08000b;
-        public static final int signupUsernameTextView=0x7f08000a;
-        public static final int userIcon=0x7f080001;
-        public static final int usernameField=0x7f080000;
+        public static final int action_edit_buddies=0x7f080017;
+        public static final int action_logout=0x7f080016;
+        public static final int action_settings=0x7f080015;
+        public static final int add_buddy_button=0x7f080000;
+        public static final int homepoints=0x7f080012;
+        public static final int homepointsTextView=0x7f080011;
+        public static final int login_splash_text=0x7f080004;
+        public static final int pager=0x7f080008;
+        public static final int passwordField=0x7f080003;
+        public static final int passwordIcon=0x7f080005;
+        public static final int signIn=0x7f080006;
+        public static final int signUp=0x7f080007;
+        public static final int signUpSplash=0x7f080009;
+        public static final int signupButton=0x7f080013;
+        public static final int signupButtonFacebook=0x7f080014;
+        public static final int signupEmailField=0x7f080010;
+        public static final int signupEmailTextView=0x7f08000f;
+        public static final int signupIcon=0x7f08000a;
+        public static final int signupPasswordField=0x7f08000e;
+        public static final int signupPasswordTextView=0x7f08000d;
+        public static final int signupUsernameField=0x7f08000c;
+        public static final int signupUsernameTextView=0x7f08000b;
+        public static final int userIcon=0x7f080002;
+        public static final int usernameField=0x7f080001;
     }
     public static final class layout {
         public static final int activity_buddies_fragment=0x7f030000;
@@ -75,6 +76,7 @@ public final class R {
         public static final int action_edit_friends=0x7f050011;
         public static final int action_logout=0x7f050010;
         public static final int action_settings=0x7f050001;
+        public static final int add_buddy=0x7f05001d;
         public static final int app_name=0x7f050000;
         public static final int buddies=0x7f05000f;
         public static final int email=0x7f050014;
