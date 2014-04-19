@@ -2,6 +2,7 @@ package com.example.hobble2;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -71,10 +72,20 @@ public class LoginActivity extends Activity {
 							setProgressBarIndeterminateVisibility(false);
 							if(e == null){
 								// User logged in successfully
-								Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-								intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-								intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-								startActivity(intent);
+								/*if(!user.getBoolean("emailVerified")){
+									AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+									builder.setMessage(R.string.email_unverified)
+									.setTitle(R.string.error_title)
+									.setPositiveButton(android.R.string.ok, null);
+									AlertDialog dialog = builder.create();
+									dialog.show();
+								}
+								else {*/
+									Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+									intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+									intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+									startActivity(intent);
+								//}
 							}
 							else{
 								// Error parsing credentials

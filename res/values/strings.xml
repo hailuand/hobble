@@ -32,5 +32,6 @@
     <string name="action_edit_buddies">Edit Buddies</string>
     <string name="add_buddy">Add Buddy</string>
     <string name="sign_up_punc">Sign Up</string>
+    <string name="email_unverified">Your email is unverified. You must verify your email before you start Hobbling!</string>
 
 </resources>

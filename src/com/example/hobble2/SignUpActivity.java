@@ -84,24 +84,28 @@ public class SignUpActivity extends Activity {
 				password = password.trim();
 				email = email.trim();
 
-				if (!email.contains("@umich.edu")) { // Checks to see if email is @umich.edu domain
-					AlertDialog.Builder builder = new AlertDialog.Builder(
-							SignUpActivity.this);
-					builder.setMessage(R.string.invalid_email_address)
-							.setTitle(R.string.error_title)
-							.setPositiveButton(android.R.string.ok, null);
-					AlertDialog alert = builder.create();
-					alert.show();
-				} else if (username.isEmpty() 
+				if (username.isEmpty() 
 						|| password.isEmpty()
 						|| email.isEmpty()) {
 					AlertDialog.Builder builder = new AlertDialog.Builder(
 							SignUpActivity.this);
 					builder.setMessage(R.string.empty_fields_error)
 							.setTitle(R.string.error_title)
-							.setPositiveButton(android.R.string.ok, null);
-				} else {
-					// Signup credentials accepted
+							.setPositiveButton(android.R.string.ok, null)
+							.show();
+				} 
+				else if (!email.contains("@umich.edu")) { 
+				// Checks to see if email is @umich.edu domain
+					AlertDialog.Builder builder = new AlertDialog.Builder(
+							SignUpActivity.this);
+					builder.setMessage(R.string.invalid_email_address)
+							.setTitle(R.string.error_title)
+							.setPositiveButton(android.R.string.ok, null)
+							.show();
+				} 
+				
+				else {
+					// Sign-up credentials accepted
 					// Create new user
 					setProgressBarIndeterminateVisibility(true); // Begin loading progress indiciator
 																	
@@ -117,12 +121,25 @@ public class SignUpActivity extends Activity {
 							// SIGN ME UP, SCOTTY
 							setProgressBarIndeterminateVisibility(false);
 							if (e == null) {
-								// Signup went fine
+								String email = mEmail.getText().toString();
+								// Sign-up went fine, ask user to validate his/her email
+								AlertDialog.Builder builder = new AlertDialog.Builder(SignUpActivity.this);
+								builder.setMessage("An email has been sent to " + email + ". Please validate your email to get Hobbling!").setPositiveButton(android.R.string.ok, null);
+								AlertDialog dialog = builder.create();
+								dialog.show();
+								// Navigate to login activity
+								Intent intent = new Intent(SignUpActivity.this,
+										LoginActivity.class);
+								intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+								intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+								startActivity(intent);
+								/*
 								Intent intent = new Intent(SignUpActivity.this,
 										MainActivity.class);
 								intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 								intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
 								startActivity(intent);
+								*/
 							} else {
 								// YOU BLEW IT
 								AlertDialog.Builder builder = new AlertDialog.Builder(

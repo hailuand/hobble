@@ -80,6 +80,7 @@ public final class R {
         public static final int app_name=0x7f050000;
         public static final int buddies=0x7f05000f;
         public static final int email=0x7f050014;
+        public static final int email_unverified=0x7f05001f;
         public static final int empty_buddies=0x7f05001b;
         public static final int empty_fields_error=0x7f050017;
         public static final int error_title=0x7f050008;

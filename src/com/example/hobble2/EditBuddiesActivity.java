@@ -50,7 +50,6 @@ public class EditBuddiesActivity extends ListActivity {
 			public void onClick(View arg0) {
 				AlertDialog.Builder alert = new AlertDialog.Builder(EditBuddiesActivity.this);
 				alert.setTitle("Enter Hobbler's username");
-				alert.setMessage("Message");
 				
 				final EditText input = new EditText(EditBuddiesActivity.this);
 				alert.setView(input);
@@ -89,7 +88,8 @@ public class EditBuddiesActivity extends ListActivity {
 						});
 					}
 				});
-				
+				AlertDialog dialog = alert.create();
+				dialog.show();
 			}
 		});
 		
