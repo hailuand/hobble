@@ -126,7 +126,7 @@
         android:background="@android:color/white"
         android:gravity="left|center_vertical"
         android:paddingLeft="20dp"
-        android:text="Sign Up" />
+        android:text="@string/sign_up_punc" />
 
     <Button
         android:id="@+id/signupButtonFacebook"

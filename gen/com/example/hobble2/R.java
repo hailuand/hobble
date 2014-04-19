@@ -94,6 +94,7 @@ public final class R {
         public static final int select_homepoint=0x7f050016;
         public static final int sign_in=0x7f050006;
         public static final int sign_up=0x7f050007;
+        public static final int sign_up_punc=0x7f05001e;
         public static final int sign_up_splash=0x7f05000c;
         public static final int title_activity_buddies_fragment=0x7f05001a;
         public static final int title_activity_login=0x7f050003;
